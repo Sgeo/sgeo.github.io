@@ -41,7 +41,7 @@ function init(data) {
         var a = document.createElement("a");
         a.href = "javascript:void(0);";
         var name = data[i].name; var author = data[i].author;
-        a.innerText = name + " by " + author;
+        a.textContent = name + " by " + author;
         a.addEventListener("click", makeHandler(data[i]), false);
         li.appendChild(a);
         musiclist.appendChild(li);
