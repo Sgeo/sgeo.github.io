@@ -61,7 +61,6 @@ function init(data) {
         a.textContent = name + " by " + author;
         a.addEventListener("click", makeHandler(data[i]), false);
         li.appendChild(a);
-        li.appendChild(document.createTextNode(" "));
         attachDownloadLinks(li, data[i]);
         musiclist.appendChild(li);
     }
