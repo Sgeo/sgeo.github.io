@@ -9,7 +9,8 @@ Now playing: <span id="nowplaying"></span><br>
 <script type="text/javascript">
 var audioplayer = document.getElementById("audioplayer");
 var nowplaying = document.getElementById("nowplaying");
-function attachsources(player, partialurl) {
+
+function attachSources(player, partialurl) {
     var types = [
         {"ext": ".mp3", "type": "audio/mp3"},
         {"ext": ".ogg", "type": "audio/ogg"},
@@ -25,10 +26,26 @@ function attachsources(player, partialurl) {
         player.appendChild(source);
     }
 }
+
+function attachDownloadLink(listItem, item, ext) {
+    listItem.appendChild(document.createTextNode(" "));
+    var downloadLink = document.createElement("a");
+    downloadLink.href = "http://tagpro.koalabeast.com/sounds/music/" + item.url + "." + ext;
+    downloadLink.textContent = "(download " + ext + ")";
+    listItem.appendChild(downloadLink);
+}
+
+function attachDownloadLinks(listItem, item) {
+    var exts = ["mp3", "ogg"];
+    for(var i = 0; i < exts.length; i++) {
+        attachDownloadLink(listItem, item, exts[i]);
+    }
+}
+
 function makeHandler(item) {
     return function() {
         nowplaying.textContent = item.name + " by " + item.author;
-        attachsources(audioplayer, "http://tagpro.koalabeast.com/sounds/music/" + item.url);
+        attachSources(audioplayer, "http://tagpro.koalabeast.com/sounds/music/" + item.url);
         audioplayer.volume = item.volume;
         audioplayer.load(); // Needed when changing source elements dynamically, per http://stackoverflow.com/questions/7953593/change-source-to-audio-html5-element
         audioplayer.play();
@@ -45,10 +62,7 @@ function init(data) {
         a.addEventListener("click", makeHandler(data[i]), false);
         li.appendChild(a);
         li.appendChild(document.createTextNode(" "));
-        var downloadLink = document.createElement("a");
-        downloadLink.href = "http://tagpro.koalabeast.com/sounds/music/" + data[i].url + ".mp3";
-        downloadLink.textContent = "(download)";
-        li.appendChild(downloadLink);
+        attachDownloadLinks(li, data[i]);
         musiclist.appendChild(li);
     }
 }
