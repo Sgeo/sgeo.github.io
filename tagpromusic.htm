@@ -27,7 +27,7 @@ function attachsources(player, partialurl) {
 }
 function makeHandler(item) {
     return function() {
-        nowplaying.innerText = item.name + " by " + item.author;
+        nowplaying.textContent = item.name + " by " + item.author;
         attachsources(audioplayer, "http://tagpro.koalabeast.com/sounds/music/" + item.url);
         audioplayer.volume = item.volume;
         audioplayer.load(); // Needed when changing source elements dynamically, per http://stackoverflow.com/questions/7953593/change-source-to-audio-html5-element
