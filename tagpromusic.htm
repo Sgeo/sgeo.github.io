@@ -44,6 +44,11 @@ function init(data) {
         a.textContent = name + " by " + author;
         a.addEventListener("click", makeHandler(data[i]), false);
         li.appendChild(a);
+        li.appendChild(document.createTextNode(" "));
+        var downloadLink = document.createElement("a");
+        downloadLink.href = "http://tagpro.koalabeast.com/sounds/music/" + data[i].url + ".mp3";
+        downloadLink.textContent = "(download)";
+        li.appendChild(downloadLink);
         musiclist.appendChild(li);
     }
 }
