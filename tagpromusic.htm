@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<title>TagPro Music</title>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<script type="text/javascript">
+$(function(){
+    var audioplayer = $("#audioplayer");
+    var nowplaying = $("#nowplaying");
+    var makeHandler = function(item) {
+        return function(){
+            nowplaying.text(item.name + " by " + item.author);
+            audioplayer.attr("src", "http://tagpro.koalabeast.com/sounds/music/" + item.url + ".mp3");
+            audioplayer.attr("volume", item.volume);
+            audioplayer[0].play();
+        };
+    };
+    $.ajax("http://tagpro.koalabeast.com/music", {"dataType": "jsonp", "success": function(data){
+        for(var i = 0; i < data.length; i++) {
+            var li = $("<li>");
+            var a = $("<a>");
+            a.attr("href", "#");
+            var name = data[i].name; var author = data[i].author; // Good old Python paranoia
+            a.text(name + " by " + author);
+            a.on("click", makeHandler(data[i]));
+            a.appendTo(li);
+            li.appendTo(musiclist);
+        }
+    }});
+});
+</script>
+<body>
+<ul id="musiclist"></ul><br>
+Now playing: <span id="nowplaying"></span><br>
+<audio id="audioplayer" controls loop></audio>
+</body>
+</html>
