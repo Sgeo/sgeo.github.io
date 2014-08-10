@@ -21,7 +21,7 @@ function attachsources(player, partialurl) {
     for(var i = 0; i < types.length; i++) {
         var source = document.createElement("source");
         source.src = partialurl + types[i].ext;
-        source.type = types[i].type
+        source.type = types[i].type;
         player.appendChild(source);
     }
 }
