@@ -42,7 +42,7 @@ function init(data) {
         a.href = "javascript:void(0);";
         var name = data[i].name; var author = data[i].author;
         a.innerText = name + " by " + author;
-        a.onclick = makeHandler(data[i]);
+        a.addEventListener("click", makeHandler(data[i]), false);
         li.appendChild(a);
         musiclist.appendChild(li);
     }
