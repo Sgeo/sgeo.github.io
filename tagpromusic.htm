@@ -9,11 +9,28 @@ Now playing: <span id="nowplaying"></span><br>
 <script type="text/javascript">
 var audioplayer = document.getElementById("audioplayer");
 var nowplaying = document.getElementById("nowplaying");
+function attachsources(player, partialurl) {
+    var types = [
+        {"ext": ".mp3", "type": "audio/mp3"},
+        {"ext": ".ogg", "type": "audio/ogg"},
+        {"ext": ".m4a", "type": "audio/m4a"}
+    ];
+    while(player.firstChild) {
+        player.removeChild(player.firstChild);
+    }
+    for(var i = 0; i < types.length; i++) {
+        var source = document.createElement("source");
+        source.src = partialurl + types[i].ext;
+        source.type = types[i].type
+        player.appendChild(source);
+    }
+}
 function makeHandler(item) {
     return function() {
         nowplaying.innerText = item.name + " by " + item.author;
-        audioplayer.src = "http://tagpro.koalabeast.com/sounds/music/" + item.url + ".mp3";
+        attachsources(audioplayer, "http://tagpro.koalabeast.com/sounds/music/" + item.url);
         audioplayer.volume = item.volume;
+        audioplayer.load(); // Needed when changing source elements dynamically, per http://stackoverflow.com/questions/7953593/change-source-to-audio-html5-element
         audioplayer.play();
     };
 }
