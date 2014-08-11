@@ -5,10 +5,13 @@
 .currently-playing {
     font-weight: bold;
 }
+button {
+    width: 100%;
+}
 </style>
 </head>
 <body>
-<ul id="musiclist"></ul><br>
+<table id="musiclist"></table><br>
 Now playing: <span id="nowplaying"></span><br>
 <audio id="audioplayer" controls loop></audio>
 <script type="text/javascript">
@@ -36,18 +39,19 @@ function attachSources(player, partialurl) {
     }
 }
 
-function attachDownloadLink(listItem, item, ext) {
-    listItem.appendChild(document.createTextNode(" "));
+function attachDownloadLink(row, item, ext) {
+    var td = document.createElement("td");
     var downloadLink = document.createElement("a");
     downloadLink.href = makeURL(item.url, ext);
     downloadLink.textContent = "(download " + ext + ")";
-    listItem.appendChild(downloadLink);
+    td.appendChild(downloadLink);
+    row.appendChild(td);
 }
 
-function attachDownloadLinks(listItem, item) {
+function attachDownloadLinks(row, item) {
     var exts = ["mp3", "ogg"];
     for(var i = 0; i < exts.length; i++) {
-        attachDownloadLink(listItem, item, exts[i]);
+        attachDownloadLink(row, item, exts[i]);
     }
 }
 
@@ -63,14 +67,16 @@ function makeHandler(item) {
 
 function init(data) {
     for(var i = 0; i < data.length; i++) {
-        var li = document.createElement("li");
+        var tr = document.createElement("tr");
         var button = document.createElement("button");
         var name = data[i].name; var author = data[i].author;
         button.textContent = name + " by " + author;
         button.addEventListener("click", makeHandler(data[i]), false);
-        li.appendChild(button);
-        attachDownloadLinks(li, data[i]);
-        musiclist.appendChild(li);
+        buttonTD = document.createElement("td");
+        buttonTD.appendChild(button);
+        tr.appendChild(buttonTD);
+        attachDownloadLinks(tr, data[i]);
+        musiclist.appendChild(tr);
     }
 }
 </script>
