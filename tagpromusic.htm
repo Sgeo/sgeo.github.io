@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <head>
 <title>TagPro Music</title>
+<style type="text/css">
+.currently-playing {
+    font-weight: bold;
+}
+</style>
 </head>
 <body>
 <ul id="musiclist"></ul><br>
@@ -59,12 +64,11 @@ function makeHandler(item) {
 function init(data) {
     for(var i = 0; i < data.length; i++) {
         var li = document.createElement("li");
-        var a = document.createElement("a");
-        a.href = "javascript:void(0);";
+        var button = document.createElement("button");
         var name = data[i].name; var author = data[i].author;
-        a.textContent = name + " by " + author;
-        a.addEventListener("click", makeHandler(data[i]), false);
-        li.appendChild(a);
+        button.textContent = name + " by " + author;
+        button.addEventListener("click", makeHandler(data[i]), false);
+        li.appendChild(button);
         attachDownloadLinks(li, data[i]);
         musiclist.appendChild(li);
     }
