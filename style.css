@@ -3,7 +3,28 @@
 }
 button {
   display:inline-block;
-  min-width: 50px;
+  min-width: 250px;
   width: 80px;
   padding:5px 10px;
+  font-family: sans-serif;
+  text-decoration-color: white;
+  appearance: none;
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+  border-radius: 5px;
+}
+button:hover {
+  background-color: #346392;
+}
+button:active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}
+body {
+  background-color: White;
+}
+p {
+  font-family: sans-serif;
 }
