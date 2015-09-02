@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<head>
-<title>TagPro Music</title>
-<link rel="sylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-<table id="musiclist"></table><br>
-Now playing: <span id="nowplaying"></span><br>
-<audio id="audioplayer" controls loop></audio>
-<script  type="text/javascript">
 var audioplayer = document.getElementById("audioplayer");
 var nowplaying = document.getElementById("nowplaying");
 
@@ -73,8 +62,3 @@ function init(data) {
         musiclist.appendChild(tr);
     }
 }
-
-</script>
-<script src="http://tagpro.koalabeast.com/music?callback=init" type="text/javascript"></script>
-</body>
-</html>
