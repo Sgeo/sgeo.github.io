@@ -2,12 +2,12 @@
     font-weight: bold;
 }
 button {
+  font-size: 20px;
   display:inline-block;
-  min-width: 250px;
-  width: 80px;
+  min-width: 330px;
+  width: 120px;
   padding:5px 10px;
   font-family: sans-serif;
-  text-decoration-color: white;
   appearance: none;
   color: #fff;
   background-color: #6496c8;
@@ -24,7 +24,30 @@ button:active {
 }
 body {
   background-color: White;
+  font-family: Helvetica, sans-serif;
 }
-p {
+span {
   font-family: sans-serif;
+}
+a {
+
+}
+#musiclist {
+
+}
+#title {
+  width: 650px;
+}
+#titletext {
+  text-align: center;
+  font-size: 100px;
+  color: #990000;
+  text-shadow: 1px 1px 2px black;
+}
+#bigtable {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+#bigtable table{
+  width: auto;
 }
