@@ -26,7 +26,7 @@ function attachDownloadLink(row, item, ext) {
     var td = document.createElement("td");
     var downloadLink = document.createElement("a");
     downloadLink.href = makeURL(item.url, ext);
-    downloadLink.textContent = "(download " + ext + ")";
+    downloadLink.textContent = "(" + ext + ")";
     td.appendChild(downloadLink);
     row.appendChild(td);
 }
