@@ -22,6 +22,9 @@ button:active {
   background-color: #27496d;
   text-shadow: -1px 1px #193047;
 }
+button::after{
+
+}
 body {
   background-color: White;
   font-family: Helvetica, sans-serif;
@@ -30,7 +33,21 @@ span {
   font-family: sans-serif;
 }
 a {
+  font-size: 14px;
+  text-decoration: none;
+  color: Black;
+}
+a:active {
+  text-decoration: underline;
+  color: Red;
+}
+a:hover {
+  text-decoration: underline;
+  color: Blue;
+}
 
+#nowplaying{
+  font-weight: bolder;
 }
 #musiclist {
 
