@@ -2,11 +2,10 @@
     font-weight: bold;
 }
 button {
-  font-size: 20px;
-  display:inline-block;
-  min-width: 330px;
-  width: 120px;
-  padding:5px 10px;
+  font-size: 13px;
+  display: block;
+  width: 220px;
+  padding: 4px 5px;
   font-family: sans-serif;
   appearance: none;
   color: #fff;
