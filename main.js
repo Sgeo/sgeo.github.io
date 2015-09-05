@@ -62,3 +62,8 @@ function init(data) {
         musiclist.appendChild(tr);
     }
 }
+
+function shuffle() {
+  alert("Shuffling!");
+  console.log('Shuffling');
+}

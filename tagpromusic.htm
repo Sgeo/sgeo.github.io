@@ -7,7 +7,13 @@
 
 <body>
 <table id="bigtable"><tr><td>
-  <table id="musiclist"></table>
+  <table id="musiclist">
+    <tr>
+      <td>
+        <button type="button" id="shuffle" onclick=shuffle() autofocus>Shuffle</button>
+      </td>
+    </tr>
+  </table>
 
   Now playing: <span id="nowplaying"></span>
   <br><audio id="audioplayer" controls loop></audio>

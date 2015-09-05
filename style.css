@@ -1,6 +1,7 @@
 .currently-playing {
     font-weight: bold;
 }
+
 button {
   font-size: 13px;
   display: block;
@@ -21,16 +22,16 @@ button:active {
   background-color: #27496d;
   text-shadow: -1px 1px #193047;
 }
-button::after{
 
-}
 body {
   background-color: White;
   font-family: Helvetica, sans-serif;
 }
+
 span {
   font-family: sans-serif;
 }
+
 a {
   font-size: 14px;
   text-decoration: none;
@@ -48,9 +49,6 @@ a:hover {
 #nowplaying{
   font-weight: bolder;
 }
-#musiclist {
-
-}
 #title {
   width: 650px;
 }
@@ -65,4 +63,9 @@ a:hover {
 }
 #bigtable table {
   width: auto;
+}
+#shuffle {
+  background-color: #46698C;
+  text-shadow: inherit;
+
 }
