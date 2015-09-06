@@ -40,6 +40,9 @@ function attachDownloadLinks(row, item) {
 
 function makeHandler(item) {
     return function() {
+        audioplayer.onended = null;
+        audioplayer.loop = true;
+
         nowplaying.textContent = item.name + " by " + item.author;
         attachSources(audioplayer, item.url);
         audioplayer.volume = item.volume;
@@ -65,7 +68,7 @@ function init(data) {
 
 function shuffleInit(player) {
   var playing = shuffle();
-  //audioplayer.addEventListener('pause', makeListener(), false);\
+  audioplayer.loop = false;
   audioplayer.onended = shuffle;
 }
 
@@ -74,9 +77,6 @@ function shuffle() {
     var rand = Math.floor(Math.random() * 19) + 1; // Generate a random number 1-19
     console.log(rand);
     var button = document.getElementsByTagName('button')[rand];
-
-    audioplayer.removeAttribute('loop')
-    console.log(audioplayer.getAttribute('loop'));
 
     button.click(); // Click a random button
     return rand;
