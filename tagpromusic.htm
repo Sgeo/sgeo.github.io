@@ -6,28 +6,21 @@
 </head>
 
 <body>
-<table id="bigtable"><tr><td>
-  <table id="musiclist">
-    <tr>
-      <td>
-        <button type="button" id="shuffle" onclick=shuffleInit(audioplayer) autofocus>Shuffle</button>
-      </td>
-    </tr>
-  </table>
+<div id='title'><h1 id='titletext'>TagPro<br>Music</h1></div>
+<table id="musiclist">
+  <tr>
+    <td>
+      <button type="button" id="shuffle" onclick=shuffleInit(audioplayer) autofocus>Shuffle</button>
+    </td>
+  </tr>
+</table>
 
-  Now playing: <span id="nowplaying"></span>
-  <br><audio id="audioplayer" controls></audio>
+Now playing: <span id="nowplaying"></span>
+<br><audio id="audioplayer" controls></audio>
 
-  <script src="main.js" type="text/javascript"></script>
-  <script src="http://tagpro.koalabeast.com/music?callback=init" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script>
+<script src="http://tagpro.koalabeast.com/music?callback=init" type="text/javascript"></script>
 
-</td>
 
-<td id="title">
-  <h1 id="titletext">
-    TagPro<br>Music
-  </h1>
-</td>
-</tr></table>
 </body>
 </html>
