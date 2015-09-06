@@ -10,13 +10,13 @@
   <table id="musiclist">
     <tr>
       <td>
-        <button type="button" id="shuffle" onclick=shuffle() autofocus>Shuffle</button>
+        <button type="button" id="shuffle" onclick=shuffleInit(audioplayer) autofocus>Shuffle</button>
       </td>
     </tr>
   </table>
 
   Now playing: <span id="nowplaying"></span>
-  <br><audio id="audioplayer" controls loop></audio>
+  <br><audio id="audioplayer" controls></audio>
 
   <script src="main.js" type="text/javascript"></script>
   <script src="http://tagpro.koalabeast.com/music?callback=init" type="text/javascript"></script>
