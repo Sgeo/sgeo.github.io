@@ -66,7 +66,7 @@ function init(data) {
     }
 }
 
-function shuffleInit(player) {
+function shuffleInit() {
   var playing = shuffle();
   audioplayer.loop = false;
   audioplayer.onended = shuffle;

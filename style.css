@@ -51,11 +51,10 @@ a:hover {
 }
 #title {
   width: 600px;
-  height: 125;
-  align: center;
+  height: 125px;
   top: 0;
   right: 200px;
-  position: fixed;
+  position: absolute;
   padding-left: 20px;
 }
 #titletext {
