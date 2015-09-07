@@ -79,6 +79,8 @@ function shuffle() {
     var button = document.getElementsByTagName('button')[rand];
 
     button.click(); // Click a random button
+    audioplayer.loop = false;
+    audioplayer.onended = shuffle;
     return rand;
 }
 
