@@ -35,7 +35,7 @@ span {
 a {
   font-size: 14px;
   text-decoration: none;
-  color: Black;
+  color: Blue;
 }
 a:active {
   text-decoration: underline;
@@ -43,7 +43,6 @@ a:active {
 }
 a:hover {
   text-decoration: underline;
-  color: Blue;
 }
 
 #nowplaying{
