@@ -73,9 +73,7 @@ function shuffleInit() {
 }
 
 function shuffle() {
-    console.log('Shuffling');
     var rand = Math.floor(Math.random() * 19) + 1; // Generate a random number 1-19
-    console.log(rand);
     var button = document.getElementsByTagName('button')[rand];
 
     button.click(); // Click a random button
