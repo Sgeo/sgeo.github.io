@@ -1,5 +1,6 @@
 var audioplayer = document.getElementById("audioplayer");
 var nowplaying = document.getElementById("nowplaying");
+var JSONdata;
 
 function makeURL(itemURL, ext) {
     return "http://tagpro.koalabeast.com/sounds/music/" + itemURL + "." + ext;
@@ -52,6 +53,7 @@ function makeHandler(item) {
 }
 
 function init(data) {
+    JSONdata = data;
     for(var i = 0; i < data.length; i++) {
         var tr = document.createElement("tr");
         var button = document.createElement("button");
@@ -73,9 +75,8 @@ function shuffleInit() {
 }
 
 function shuffle() {
-    var rand = Math.floor(Math.random() * 19) + 1; // Generate a random number 1-19
+    var rand = Math.floor(Math.random() * JSONdata.length) + 1; // Generate a random number 1-19
     var button = document.getElementsByTagName('button')[rand];
-
     button.click(); // Click a random button
     audioplayer.loop = false;
     audioplayer.onended = shuffle;
