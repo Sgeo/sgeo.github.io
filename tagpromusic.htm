@@ -1,85 +1,26 @@
 <!DOCTYPE html>
 <head>
 <title>TagPro Music</title>
-<style type="text/css">
-.currently-playing {
-    font-weight: bold;
-}
-button {
-    width: 100%;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/ico" href="favicon.ico"/>
 </head>
+
 <body>
-<table id="musiclist"></table><br>
-Now playing: <span id="nowplaying"></span><br>
-<audio id="audioplayer" controls loop></audio>
-<script type="text/javascript">
-var audioplayer = document.getElementById("audioplayer");
-var nowplaying = document.getElementById("nowplaying");
+<!--<div id='title'><h1 id='titletext'>TagPro<br>Music</h1></div>-->
+<table id="musiclist">
+  <tr>
+    <td>
+      <button type="button" id="shuffle" onclick=shuffleInit() autofocus>Shuffle</button>
+    </td>
+  </tr>
+</table>
 
-function makeURL(itemURL, ext) {
-    return "http://tagpro.koalabeast.com/sounds/music/" + itemURL + "." + ext;
-}
+Now playing: <span id="nowplaying"></span>
+<br><audio id="audioplayer" controls></audio>
 
-function attachSources(player, partialurl) {
-    var types = [
-        {"ext": "mp3", "type": "audio/mp3"},
-        {"ext": "ogg", "type": "audio/ogg"},
-        {"ext": "m4a", "type": "audio/m4a"}
-    ];
-    while(player.firstChild) {
-        player.removeChild(player.firstChild);
-    }
-    for(var i = 0; i < types.length; i++) {
-        var source = document.createElement("source");
-        source.src = makeURL(partialurl, types[i].ext);
-        source.type = types[i].type;
-        player.appendChild(source);
-    }
-}
-
-function attachDownloadLink(row, item, ext) {
-    var td = document.createElement("td");
-    var downloadLink = document.createElement("a");
-    downloadLink.href = makeURL(item.url, ext);
-    downloadLink.textContent = "(download " + ext + ")";
-    td.appendChild(downloadLink);
-    row.appendChild(td);
-}
-
-function attachDownloadLinks(row, item) {
-    var exts = ["mp3", "ogg"];
-    for(var i = 0; i < exts.length; i++) {
-        attachDownloadLink(row, item, exts[i]);
-    }
-}
-
-function makeHandler(item) {
-    return function() {
-        nowplaying.textContent = item.name + " by " + item.author;
-        attachSources(audioplayer, item.url);
-        audioplayer.volume = item.volume;
-        audioplayer.load(); // Needed when changing source elements dynamically, per http://stackoverflow.com/questions/7953593/change-source-to-audio-html5-element
-        audioplayer.play();
-    };
-}
-
-function init(data) {
-    for(var i = 0; i < data.length; i++) {
-        var tr = document.createElement("tr");
-        var button = document.createElement("button");
-        var name = data[i].name; var author = data[i].author;
-        button.textContent = name + " by " + author;
-        button.addEventListener("click", makeHandler(data[i]), false);
-        buttonTD = document.createElement("td");
-        buttonTD.appendChild(button);
-        tr.appendChild(buttonTD);
-        attachDownloadLinks(tr, data[i]);
-        musiclist.appendChild(tr);
-    }
-}
-</script>
+<script src="main.js" type="text/javascript"></script>
 <script src="http://tagpro.koalabeast.com/music?callback=init" type="text/javascript"></script>
+
+
 </body>
 </html>
