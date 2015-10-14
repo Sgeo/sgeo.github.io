@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Cons` struct in crate `hlist`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Cons">
+
+    <title>hlist::Cons - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>hlist</a></p><script>window.sidebarCurrent = {name: 'Cons', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>hlist</a>::<wbr><a class='struct' href=''>Cons</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-7' href='../src/hlist/lib.rs.html#12'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Cons&lt;H, T&gt;(pub H, pub T);</pre><div class='docblock'><p>An <code>HList</code> with <code>H</code> at position 0, and <code>T</code> as the rest of the list.</p>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;H, T&gt; <a class='trait' href='../hlist/trait.HList.html' title='hlist::HList'>HList</a> for <a class='struct' href='../hlist/struct.Cons.html' title='hlist::Cons'>Cons</a>&lt;H, T&gt;</code></h3><div class='impl-items'><h4 id='method.push' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='../hlist/trait.HList.html#method.push' class='fnname'>push</a>&lt;N&gt;(self, item: N) -&gt; <a class='struct' href='../hlist/struct.Cons.html' title='hlist::Cons'>Cons</a>&lt;N, Self&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;T, Tail&gt; <a class='trait' href='../hlist/trait.Find.html' title='hlist::Find'>Find</a>&lt;T, <a class='enum' href='../hlist/enum.Here.html' title='hlist::Here'>Here</a>&gt; for <a class='struct' href='../hlist/struct.Cons.html' title='hlist::Cons'>Cons</a>&lt;T, Tail&gt;</code></h3><div class='impl-items'><h4 id='method.get' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='../hlist/trait.Find.html#method.get' class='fnname'>get</a>(&amp;self) -&gt; &amp;T</code></h4>
+<h4 id='method.get_mut' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='../hlist/trait.Find.html#method.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl&lt;Head, T, Tail, TailIndex&gt; <a class='trait' href='../hlist/trait.Find.html' title='hlist::Find'>Find</a>&lt;T, <a class='struct' href='../hlist/struct.There.html' title='hlist::There'>There</a>&lt;TailIndex&gt;&gt; for <a class='struct' href='../hlist/struct.Cons.html' title='hlist::Cons'>Cons</a>&lt;Head, Tail&gt; <span class='where'>where Tail: <a class='trait' href='../hlist/trait.Find.html' title='hlist::Find'>Find</a>&lt;T, TailIndex&gt;</span></code></h3><div class='impl-items'><h4 id='method.get' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='../hlist/trait.Find.html#method.get' class='fnname'>get</a>(&amp;self) -&gt; &amp;T</code></h4>
+<h4 id='method.get_mut' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='../hlist/trait.Find.html#method.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "hlist";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
