@@ -43,7 +43,7 @@
     <section id='main' class="content trait">
 <h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>hlist</a>::<wbr><a class='trait' href=''>Find</a><wbr></span><span class='out-of-band'><span id='render-detail'>
             <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-57' href='../src/hlist/lib.rs.html#78-99'>[src]</a></span></h1>
+        </span><a id='src-57' href='../src/hlist/lib.rs.html#78-103'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Find&lt;T, I&gt; {
     fn <a href='#tymethod.get' class='fnname'>get</a>(&amp;self) -&gt; &amp;T;
     fn <a href='#tymethod.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; &amp;mut T;
@@ -80,23 +80,27 @@ if there is exactly one <code>T</code> in the <code>HList</code>.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
             <div class='methods'>
-        <h3 id='tymethod.get' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get' class='fnname'>get</a>(&amp;self) -&gt; &amp;T</code></h3><div class='docblock'><p>Retrieves a &amp;T.
-Allows for type inferencing to act like type-directed search
-```rust
-use hlist::{HList, Nil, Find}</p>
+        <h3 id='tymethod.get' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get' class='fnname'>get</a>(&amp;self) -&gt; &amp;T</code></h3><div class='docblock'><p>Retrieves a <code>&amp;T</code>.</p>
 
-<p>let list = Nil.push(0i32).push(1i64);
-let a: i64 = *list.get();
-assert!(a == 1);</p>
-</div><h3 id='tymethod.get_mut' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h3><div class='docblock'><p>Retrieves a &amp;mut T.
-Allows for type inferencing to act like type-directed search
-```rust
-use hlist::{HList, Nil, Find}</p>
+<p>Allows for type inferencing to act like type-directed search.</p>
+<pre id='rust-example-rendered' class='rust '>
+<span class='kw'>use</span> <span class='ident'>hlist</span>::{<span class='ident'>HList</span>, <span class='ident'>Nil</span>, <span class='ident'>Find</span>}
 
-<p>let mut list = Nil.push(0i32).push(1i64);
-*list.get_mut() = 5i32;
-let a: i32 = *list.get()
-assert!(a == 5);</p>
+<span class='kw'>let</span> <span class='ident'>list</span> <span class='op'>=</span> <span class='ident'>Nil</span>.<span class='ident'>push</span>(<span class='number'>0i32</span>).<span class='ident'>push</span>(<span class='number'>1i64</span>);
+<span class='kw'>let</span> <span class='ident'>a</span>: <span class='ident'>i64</span> <span class='op'>=</span> <span class='op'>*</span><span class='ident'>list</span>.<span class='ident'>get</span>();
+<span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>a</span> <span class='op'>==</span> <span class='number'>1</span>);
+</pre>
+</div><h3 id='tymethod.get_mut' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.get_mut' class='fnname'>get_mut</a>(&amp;mut self) -&gt; &amp;mut T</code></h3><div class='docblock'><p>Retrieves a <code>&amp;mut T</code>.</p>
+
+<p>Allows for type inferencing to act like type-directed search.</p>
+<pre id='rust-example-rendered' class='rust '>
+<span class='kw'>use</span> <span class='ident'>hlist</span>::{<span class='ident'>HList</span>, <span class='ident'>Nil</span>, <span class='ident'>Find</span>}
+
+<span class='kw'>let</span> <span class='kw-2'>mut</span> <span class='ident'>list</span> <span class='op'>=</span> <span class='ident'>Nil</span>.<span class='ident'>push</span>(<span class='number'>0i32</span>).<span class='ident'>push</span>(<span class='number'>1i64</span>);
+<span class='op'>*</span><span class='ident'>list</span>.<span class='ident'>get_mut</span>() <span class='op'>=</span> <span class='number'>5i32</span>;
+<span class='kw'>let</span> <span class='ident'>a</span>: <span class='ident'>i32</span> <span class='op'>=</span> <span class='op'>*</span><span class='ident'>list</span>.<span class='ident'>get</span>()
+<span class='macro'>assert</span><span class='macro'>!</span>(<span class='ident'>a</span> <span class='op'>==</span> <span class='number'>5</span>);
+</pre>
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>

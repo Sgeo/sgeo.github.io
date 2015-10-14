@@ -187,6 +187,10 @@
 <span id="145">145</span>
 <span id="146">146</span>
 <span id="147">147</span>
+<span id="148">148</span>
+<span id="149">149</span>
+<span id="150">150</span>
+<span id="151">151</span>
 </pre><pre class='rust '>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>missing_docs</span>)]</span>
@@ -266,8 +270,10 @@
 <span class='doccomment'>/// </span>
 <span class='doccomment'>/// When `foo()` is called, the compiler figures out the appropriate value for `I`.</span>
 <span class='kw'>pub</span> <span class='kw'>trait</span> <span class='ident'>Find</span><span class='op'>&lt;</span><span class='ident'>T</span>, <span class='ident'>I</span><span class='op'>&gt;</span> {
-    <span class='doccomment'>/// Retrieves a &amp;T.</span>
-    <span class='doccomment'>/// Allows for type inferencing to act like type-directed search</span>
+    <span class='doccomment'>/// Retrieves a `&amp;T`.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Allows for type inferencing to act like type-directed search.</span>
+    <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```rust</span>
     <span class='doccomment'>/// use hlist::{HList, Nil, Find}</span>
     <span class='doccomment'>///</span>
@@ -276,8 +282,10 @@
     <span class='doccomment'>/// assert!(a == 1);</span>
     <span class='kw'>fn</span> <span class='ident'>get</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='ident'>T</span>;
     
-    <span class='doccomment'>/// Retrieves a &amp;mut T.</span>
-    <span class='doccomment'>/// Allows for type inferencing to act like type-directed search</span>
+    <span class='doccomment'>/// Retrieves a `&amp;mut T`.</span>
+    <span class='doccomment'>///</span>
+    <span class='doccomment'>/// Allows for type inferencing to act like type-directed search.</span>
+    <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```rust</span>
     <span class='doccomment'>/// use hlist::{HList, Nil, Find}</span>
     <span class='doccomment'>///</span>
