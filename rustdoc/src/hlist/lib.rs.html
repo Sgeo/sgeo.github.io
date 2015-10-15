@@ -191,6 +191,8 @@
 <span id="149">149</span>
 <span id="150">150</span>
 <span id="151">151</span>
+<span id="152">152</span>
+<span id="153">153</span>
 </pre><pre class='rust '>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>warn</span>(<span class='ident'>missing_docs</span>)]</span>
@@ -261,6 +263,8 @@
 <span class='doccomment'>/// Functions that need to look up values of a type in an HList given to them should get the index from the call site:</span>
 <span class='doccomment'>///</span>
 <span class='doccomment'>/// ```rust</span>
+<span class='doccomment'>/// use hlist::{HList, Nil, Find};</span>
+<span class='doccomment'>///</span>
 <span class='doccomment'>/// fn foo&lt;I, L: Find&lt;i32, I&gt;&gt;(list: &amp;L) -&gt; i32 {</span>
 <span class='doccomment'>///     *list.get()</span>
 <span class='doccomment'>/// }</span>
@@ -275,7 +279,7 @@
     <span class='doccomment'>/// Allows for type inferencing to act like type-directed search.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```rust</span>
-    <span class='doccomment'>/// use hlist::{HList, Nil, Find}</span>
+    <span class='doccomment'>/// use hlist::{HList, Nil, Find};</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let list = Nil.push(0i32).push(1i64);</span>
     <span class='doccomment'>/// let a: i64 = *list.get();</span>
@@ -287,11 +291,11 @@
     <span class='doccomment'>/// Allows for type inferencing to act like type-directed search.</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```rust</span>
-    <span class='doccomment'>/// use hlist::{HList, Nil, Find}</span>
+    <span class='doccomment'>/// use hlist::{HList, Nil, Find};</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut list = Nil.push(0i32).push(1i64);</span>
     <span class='doccomment'>/// *list.get_mut() = 5i32;</span>
-    <span class='doccomment'>/// let a: i32 = *list.get()</span>
+    <span class='doccomment'>/// let a: i32 = *list.get();</span>
     <span class='doccomment'>/// assert!(a == 5);</span>
     <span class='kw'>fn</span> <span class='ident'>get_mut</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>T</span>;
 }
