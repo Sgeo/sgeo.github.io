@@ -9,6 +9,7 @@
 
     <title>hlist - Rust</title>
 
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
     <link rel="stylesheet" type="text/css" href="../main.css">
 
     
@@ -24,111 +25,138 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         <p class='location'></p><script>window.sidebarCurrent = {name: 'hlist', ty: 'mod', relpath: '../'};</script>
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
             <div class="search-container">
                 <input class="search-input" name="search"
                        autocomplete="off"
-                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
                        type="search">
             </div>
         </form>
     </nav>
 
     <section id='main' class="content mod">
-<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>hlist</a><wbr></span><span class='out-of-band'><a href='stability.html'>[stability]</a> <span id='render-detail'>
-            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
-        </span><a id='src-0' href='../src/hlist/lib.rs.html#2-153'>[src]</a></span></h1>
+<h1 class='fqn'><span class='in-band'>Crate <a class='mod' href=''>hlist</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-0' class='srclink' href='../src/hlist/lib.rs.html#2-153' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>This crate provides types <code>Nil</code> and <code>Cons&lt;H, T&gt;</code>, which together allow for creating lists consisting of multiple types.
 The types in the list are present in the type of the list, so that <code>Cons&lt;i32, Cons&lt;i64, Nil&gt;&gt;</code> contains an <code>i32</code> and an <code>i64</code>.
 If type <code>T</code> is present exactly once in an <code>HList</code>, it is usually possible to allow the compiler to find the <code>T</code> in the <code>HList</code> by using the <code>Find</code> trait.</p>
 </div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Cons.html'
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Cons.html'
                                title='hlist::Cons'>Cons</a></td>
-                        <td class='docblock short'><p>An <code>HList</code> with <code>H</code> at position 0, and <code>T</code> as the rest of the list.</p>
-</td>
+                        <td class='docblock short'>
+                             <p>An <code>HList</code> with <code>H</code> at position 0, and <code>T</code> as the rest of the list.</p>
+
+                        </td>
                     </tr>
                 
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.Nil.html'
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.Nil.html'
                                title='hlist::Nil'>Nil</a></td>
-                        <td class='docblock short'><p>The empty <code>HList</code>.</p>
-</td>
+                        <td class='docblock short'>
+                             <p>The empty <code>HList</code>.</p>
+
+                        </td>
                     </tr>
                 
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='struct' href='struct.There.html'
+                    <tr class=' module-item'>
+                        <td><a class='struct' href='struct.There.html'
                                title='hlist::There'>There</a></td>
-                        <td class='docblock short'><p>Used as an index into an <code>HList</code>.</p>
-</td>
+                        <td class='docblock short'>
+                             <p>Used as an index into an <code>HList</code>.</p>
+
+                        </td>
                     </tr>
                 </table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
 <table>
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='enum' href='enum.Here.html'
+                    <tr class=' module-item'>
+                        <td><a class='enum' href='enum.Here.html'
                                title='hlist::Here'>Here</a></td>
-                        <td class='docblock short'><p>Used as an index into an <code>HList</code>.</p>
-</td>
+                        <td class='docblock short'>
+                             <p>Used as an index into an <code>HList</code>.</p>
+
+                        </td>
                     </tr>
                 </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
 <table>
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.Find.html'
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.Find.html'
                                title='hlist::Find'>Find</a></td>
-                        <td class='docblock short'><p><code>Find&lt;T, I&gt;</code> is implemented for an <code>HList</code> if index <code>I</code> of the <code>HList</code> is a <code>T</code></p>
-</td>
+                        <td class='docblock short'>
+                             <p><code>Find&lt;T, I&gt;</code> is implemented for an <code>HList</code> if index <code>I</code> of the <code>HList</code> is a <code>T</code></p>
+
+                        </td>
                     </tr>
                 
-                    <tr>
-                        <td><a class='stability Unmarked' title='No stability level'></a><a class='trait' href='trait.HList.html'
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.HList.html'
                                title='hlist::HList'>HList</a></td>
-                        <td class='docblock short'><p>A marker trait that <code>Nil</code> and <code>Cons&lt;H, T&gt;</code> satisfies.
+                        <td class='docblock short'>
+                             <p>A marker trait that <code>Nil</code> and <code>Cons&lt;H, T&gt;</code> satisfies.
 Not currently used to enforce proper hlists, although this may change.
 Provides the <code>push()</code> method</p>
-</td>
+
+                        </td>
                     </tr>
                 </table></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
-        <div class="shortcuts">
-            <h1>Keyboard shortcuts</h1>
-            <dl>
-                <dt>?</dt>
-                <dd>Show this help dialog</dd>
-                <dt>S</dt>
-                <dd>Focus the search field</dd>
-                <dt>&larrb;</dt>
-                <dd>Move up in search results</dd>
-                <dt>&rarrb;</dt>
-                <dd>Move down in search results</dd>
-                <dt>&#9166;</dt>
-                <dd>Go to active search result</dd>
-            </dl>
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
         </div>
-        <div class="infos">
-            <h1>Search tricks</h1>
-            <p>
-                Prefix searches with a type followed by a colon (e.g.
-                <code>fn:</code>) to restrict the search to a given type.
-            </p>
-            <p>
-                Accepted types are: <code>fn</code>, <code>mod</code>,
-                <code>struct</code>, <code>enum</code>,
-                <code>trait</code>, <code>typedef</code> (or
-                <code>tdef</code>).
-            </p>
-        </div>
-    </div>
+    </aside>
 
     
 
@@ -140,6 +168,6 @@ Provides the <code>push()</code> method</p>
     <script src="../jquery.js"></script>
     <script src="../main.js"></script>
     
-    <script async src="../search-index.js"></script>
+    <script defer src="../search-index.js"></script>
 </body>
 </html>
