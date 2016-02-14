@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["take","Allows use of a value pointed to by `&mut T` as though it was owned, as long as a `T` is made available afterwards."]]});
