@@ -44,7 +44,7 @@
                                                                        "-soundsync", "2",
                                                                        "-soundbufsize", "150",
                                                                        "-residsamp", "0",
-                                                                       "-conf", "vice.ini"]),
+                                                                       "-conf", "/emulator/vice.ini"]),
                                                  VICELoader.mountFile("Habitat-Boot.d64",
                                                                       VICELoader.fetchFile("Neohabitat Boot",
                                                                                            "Habitat-Boot.d64")),
@@ -55,7 +55,7 @@
                                                                       VICELoader.fetchFile("Configuration",
                                                                                            "vice.ini")),
                                                  VICELoader.fliplist([["Habitat-B.d64"]]),
-                                                 VICELoader.autoLoad("Habitat-Boot.d64")))
+                                                 VICELoader.autoLoad("/emulator/Habitat-Boot.d64")))
       emulator.start({ waitAfterDownloading: true });
     </script>
   </body>
