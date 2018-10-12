@@ -1,0 +1,62 @@
+<!--
+ The Emularity: An Example C64 Loader
+ For use with The Emularity, downloadable at http://www.emularity.com/
+
+ SIMPLE STEPS for trying an emulated computer using ViceJS 3.2
+ ("Comaland" for the C64).
+
+ * Check out this repository in your browser-accessible directory;
+   this file as well as es6-promise.js, browserfs.min.js and loader.js
+   are required. The logo and images directories are optional, but the
+   splash screen looks quite a lot better when they're available.
+
+ * Download the files that comprise the compiled ViceJS emulator:
+   https://archive.org/download/emularity_engine_v1/vice-resid.js.gz
+
+ * Download a copy of Comaland 100% from
+   https://archive.org/download/comaland_100/image{1..4}.d64
+
+ * Visit your example_vicejs.html file with a modern
+   Javascript-capable browser.
+
+ * For more information about the DOSBox-X Emscripten port, please see
+   https://github.com/rjanicek/vice.js/ (for Vice 2.4), or Sgeo's
+   repository for Vice 3.2 (once he publishes it, hint hint).
+-->
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Neohabitat</title>
+  </head>
+  <body>
+    <canvas id="canvas" style="display: block; margin: 0 auto;"/>
+    <script type="text/javascript" src="es6-promise.js"></script>
+    <script type="text/javascript" src="browserfs.min.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript">
+      var emulator = new Emulator(document.querySelector("#canvas"),
+                                  null,
+                                  new VICELoader(VICELoader.emulatorJS("x64.js"),
+                                                 VICELoader.nativeResolution(0, 0),
+                                                 VICELoader.extraArgs(["-soundfragsize", "4",
+                                                                       "-soundrate", "48000",
+                                                                       "-soundsync", "2",
+                                                                       "-soundbufsize", "150",
+                                                                       "-residsamp", "0",
+                                                                       "-config", "/emulator/vice.ini"]),
+                                                 VICELoader.mountFile("Habitat-Boot.d64",
+                                                                      VICELoader.fetchFile("Neohabitat Boot",
+                                                                                           "Habitat-Boot.d64")),
+                                                 VICELoader.mountFile("Habitat-B.d64",
+                                                                      VICELoader.fetchFile("Neohabitat Imagery",
+                                                                                           "Habitat-B.d64")),
+                                                 VICELoader.mountFile("vice.ini",
+                                                                      VICELoader.fetchFile("Configuration",
+                                                                                           "vice.ini")),
+                                                 VICELoader.fliplist([["Habitat-B.d64"]]),
+                                                 VICELoader.autoLoad("Habitat-Boot.d64")))
+      emulator.start({ waitAfterDownloading: false });
+    </script>
+  </body>
+</html>
