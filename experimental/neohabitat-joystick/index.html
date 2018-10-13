@@ -54,6 +54,9 @@
                                                  VICELoader.mountFile("vice.ini",
                                                                       VICELoader.fetchFile("Configuration",
                                                                                            "vice.ini")),
+                                                 VICELoader.mountFile("joymap.txt",
+                                                                      VICELoader.fetchFile("Joystick Mapping",
+                                                                                           "joymap.txt")),
                                                  VICELoader.fliplist([["Habitat-B.d64"]]),
                                                  VICELoader.autoLoad("Habitat-Boot.d64")))
       emulator.start({ waitAfterDownloading: false });
