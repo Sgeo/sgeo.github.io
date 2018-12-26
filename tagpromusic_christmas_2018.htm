@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<title>TagPro Music</title>
+<link rel="stylesheet" type="text/css" href="tagpromusic/style.css">
+<link rel="icon" type="image/ico" href="tagpromusic/favicon.ico"/>
+</head>
+
+<body>
+<!--<div id='title'><h1 id='titletext'>TagPro<br>Music</h1></div>-->
+<table id="musiclist">
+  <tr>
+    <td>
+      <button type="button" id="shuffle" onclick=shuffleInit() autofocus>Shuffle</button>
+    </td>
+  </tr>
+</table>
+
+Now playing: <span id="nowplaying"></span>
+<br><audio id="audioplayer" controls></audio>
+
+<script src="tagpromusic/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+// List copied from http://static.koalabeast.com/scripts/events/christmas-2018.js?v=2
+init([
+    { "name": "we-wish-you-a-merry-christmas", "author": "freexmasmp3.com", "url": "we-wish-you-a-merry-christmas", "volume": "1" },
+    { "name": "12-days-funk", "author": "freexmasmp3.com", "url": "12-days-funk", "volume": "1" },
+    { "name": "angels-we-have-heard", "author": "freexmasmp3.com", "url": "angels-we-have-heard", "volume": "1" },
+    { "name": "auld-lang-syne-piano", "author": "freexmasmp3.com", "url": "auld-lang-syne-piano", "volume": "1" },
+    { "name": "away-in-a-manger-epiano", "author": "freexmasmp3.com", "url": "away-in-a-manger-epiano", "volume": "1" },
+    { "name": "bethlem-jazz", "author": "freexmasmp3.com", "url": "bethlem-jazz", "volume": "1" },
+    { "name": "carol-of-the-bells", "author": "freexmasmp3.com", "url": "carol-of-the-bells", "volume": "1" },
+    { "name": "come-from-stars", "author": "freexmasmp3.com", "url": "come-from-stars", "volume": "1" },
+    { "name": "deck-the-halls", "author": "freexmasmp3.com", "url": "deck-the-halls", "volume": "1" },
+    { "name": "ding-dong-merrily", "author": "freexmasmp3.com", "url": "ding-dong-merrily", "volume": "1" },
+    { "name": "first-noel-r&b", "author": "freexmasmp3.com", "url": "first-noel-r&b", "volume": "1" },
+    { "name": "god-rest-ye-merry-gentlemen", "author": "freexmasmp3.com", "url": "god-rest-ye-merry-gentlemen", "volume": "1" },
+    { "name": "herald", "author": "freexmasmp3.com", "url": "herald", "volume": "1" },
+    { "name": "jingle-bell-piano", "author": "freexmasmp3.com", "url": "jingle-bell-piano", "volume": "1" },
+    { "name": "jingle-bells-country", "author": "freexmasmp3.com", "url": "jingle-bells-country", "volume": "1" },
+    { "name": "joy-to-the-world", "author": "freexmasmp3.com", "url": "joy-to-the-world", "volume": "1" },
+    { "name": "o-come-all-ye-faithful", "author": "freexmasmp3.com", "url": "o-come-all-ye-faithful", "volume": "1" },
+    { "name": "o-holy-night", "author": "freexmasmp3.com", "url": "o-holy-night", "volume": "1" },
+    { "name": "silent-night-disco", "author": "freexmasmp3.com", "url": "silent-night-disco", "volume": "1" },
+]);
+</script>
+</body>
+</html>
