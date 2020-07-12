@@ -1,5 +1,6 @@
-# Tagpro Music Player
-A simple music player
+# My GitHub Pages projects
 
-This is a basic music player which plays all of the TagPro music.
-It is built with basic html and JavaScript to run efficiently on any device.
+* [TagPro Music Player](http://sgeo.github.io/tagpromusic.htm), to play music from <https://tagpro.gg>. Also see [TagPro Music Chrismas 2018](http://sgeo.github.io/tagpromusic_christmas_2018.htm), a player for the music played in TagPro's Chrismas 2018 event (all of which was from  <https://www.freexmasmp3.com/>.
+* [Wayback CDX Searcher](https://web.archive.org/web/20190404061557id_/https://sgeo.github.io/wayback_cdx_searcher/), to easily search the Wayback Machine's archives for files with a given extension on a given domain or subdomain.
+* [Archive MIDI Player](https://sgeo.github.io/archive_midi_player/), to play MIDI files in Internet Archive items.
+* 
