@@ -3,7 +3,7 @@ var nowplaying = document.getElementById("nowplaying");
 var JSONdata;
 
 function makeURL(itemURL, ext) {
-    return "http://tagpro.koalabeast.com/sounds/music/" + itemURL + "." + ext;
+    return "https://tagpro.koalabeast.com/sounds/music/" + itemURL + "." + ext;
 }
 
 function attachSources(player, partialurl) {
